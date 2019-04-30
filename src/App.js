@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import { Switch, Route } from "react-router-dom";
 import NavBar from "./components/navBar/NavBar";
 import ProductList from "./components/productList/ProductList";
 import Product from "./components/product/Product";
@@ -17,8 +18,14 @@ class App extends Component {
     return (
       //react fragment
       <React.Fragment>
-        <h3>Hello from app</h3>
-        <ProductList />
+        <NavBar />
+
+        <Switch>
+          <Route exact path="/" component={ProductList} />
+          <Route path="/details" component={Details} />
+          <Route path="/cart" component={Cart} />
+          <Route component={Default} />
+        </Switch>
       </React.Fragment>
     );
   }
