@@ -2,14 +2,13 @@ import React, { Component } from "react";
 import Product from "../product/Product";
 
 class ProductList extends Component {
-  constructor(props) {
-    super(props);
-  }
+  state = {};
   render() {
     return (
-      <div>
-        <Product />
-      </div>
+      <React.Fragment>
+        <div />
+      </React.Fragment>
+      // <Product />
     );
   }
 }
