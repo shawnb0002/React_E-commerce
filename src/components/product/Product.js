@@ -33,12 +33,48 @@ class Product extends Component {
             </button>
           </div>
           {/* Card footer */}
+          <div className="card-footer d-flex justify-content-between">
+            <p className="align-self-center mb-0">{title}</p>
+            <h5 className="text-blue font-italic mb-0">
+              <span className="mr-1">$</span>
+              {price}
+            </h5>
+          </div>
         </div>
       </ProductWrapper>
     );
   }
 }
 
-const ProductWrapper = styled.div``;
+const ProductWrapper = styled.div`
+  .card {
+    border-color: transparent;
+    transition: all 1s linear;
+  }
+  .card-footer {
+    background: transparent;
+    border-top: transparent;
+    transition: all 1s linear;
+  }
+  &:hover {
+    .card {
+      border: 0.04rem solid rgba(0, 0, 0, 0.2);
+      box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+    }
+    .card-footer {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+  .img-container {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-img-top {
+    transition: all 1s linear;
+  }
+  .img-container:hover .card-img-top {
+    transform: scale(1.2);
+  }
+`;
 
 export default Product;
